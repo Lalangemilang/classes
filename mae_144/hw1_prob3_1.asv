@@ -1,0 +1,29 @@
+%muhammad bintang gemilang
+
+function [bz,az] = MBG_C2D_matched(bs, as, k, h, omegab, causality)
+
+%bs = zeros
+%as = poles
+%k = s domain gain 
+%h = time step 
+%omegab = frequency of interest (set to 0 if not mentioned)MBG
+%causality = strictly causal or semicausal (set to semicausal)
+
+%step 1 transfrom from s domain to z domain by z = e^(s*h)
+
+Gs=RR_tf(bs,as)
+
+for i = 1:length(Gs.z)
+    Gz_z(i) = exp(Gs.z(i)*h);
+end
+
+for j = 1:length(Gs.p)
+    Gz_p(j) = exp(Gs.p(j)*h);
+end
+%step 2 add infinite zero and set z = -1
+
+
+%step 3 causal or strictly causal
+%step 4.1 decide the omega 
+%step 4.2 use omega to decide the DC gain
+%step 5 reorder the whole equation in z domain
