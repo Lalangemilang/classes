@@ -13,6 +13,6 @@ f = RR_poly([-1 -1 -3 -3 -6 -6 -20 -20 -20 -20 -20 -20], 1);
 test = trim(a*x+b*y);
 residual1 = norm(f-test);
 
-%the power of the numerator is less than the denominator (more poles than
-%zeros) thus it will make it proper. add 5 k to make it proper and add 6 k
-%to make it strictly proper.
+%the power of the denominator is less than the numerator (more zeros than
+%poles) thus it will make it improper. add 5 k (5 poles) to make it proper 
+% and add 6 k (6 poles) to make it strictly proper.
